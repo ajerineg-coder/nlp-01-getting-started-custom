@@ -32,6 +32,10 @@ and calculates token frequencies.
 The analysis produces a frequency bar chart
 and a word cloud.
 
+## Fraud Word Frequency Results
+
+![Most Frequent Words in Fraud Article](fraud_word_frequency.png)
+
 ## Verification
 
 A successful execution displays:

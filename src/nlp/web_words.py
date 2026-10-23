@@ -205,10 +205,11 @@ ax = plt.gca()
 # to rotate 45 degrees for better readability,
 ax.tick_params(axis="x", labelrotation=45)
 
-plt.title("Most Frequent Words")
+plt.title("Most Frequent Words in Fraud Article")
 plt.xlabel("Word")
 plt.ylabel("Frequency")
 plt.tight_layout()
+plt.savefig("docs/fraud_word_frequency.png")
 plt.show()
 
 
