@@ -1,15 +1,12 @@
 # Web Mining and Applied NLP Project Report
 
-Web Mining and Applied NLP | Project 01 | Example Report
+Web Mining and Applied NLP | Project 01 | Addie Gemmell
 
 ## Overview
 
-This project establishes a professional Python environment
-for acquiring and analyzing text from web pages.
+This project analyzes text from the Wikipedia article about fraud to identify the words that appear most frequently.
 
-The objective is to demonstrate that a Python project can
-retrieve web content, extract text, compute word frequencies,
-and produce visualizations using a reproducible workflow.
+The original project analyzed a Natural Language Processing article. I customized the project by changing the source to the Fraud Wikipedia article and then filtering out some unnecessary words that appeared in the results.
 
 ## Tools and Methods
 
@@ -25,42 +22,34 @@ The project uses:
 - Ruff, ty, and pytest for code verification.
 - Zensical and GitHub Pages for published documentation.
 
-The example script retrieves a Wikipedia article,
-extracts text, cleans words,
-and calculates token frequencies.
+The script retrieves text from the Fraud Wikipedia article, cleans the text, calculates word frequencies, and creates visualizations of the results.
 
-The analysis produces a frequency bar chart
-and a word cloud.
+## Small Technical Modification
+
+For my first modification, I changed the source from the Natural Language Processing Wikipedia article to the Fraud Wikipedia article.
+
+I predicted that words related to fraud, money, and financial activity would appear more frequently. The results showed that "fraud" was the most frequent word with 208 occurrences. Other common words included "criminal," "scam," "crime," and "legal."
+
+The results also included unnecessary words such as "from," "retrieved," "with," and "archived." This showed that the webpage contained some text that was not useful to the analysis.
+
+## Custom Application
+
+For my custom application, I added filtering to remove the words "from," "with," "retrieved," and "archived."
+
+Before the additional filtering, there were 5,490 cleaned words. After filtering, there were 5,326 cleaned words. Removing these words allowed more relevant terms to appear in the top results.
 
 ## Fraud Word Frequency Results
 
+The final results show that "fraud" was the most frequent word with 208 occurrences. Other frequent terms included "criminal" with 40, "scam" with 36, "crime" with 34, and "legal" with 32.
 ![Most Frequent Words in Fraud Article](fraud_word_frequency.png)
-
-## Verification
-
-A successful execution displays:
-
-    Pipeline executed successfully!
-
-The script records execution details in a project log.
-
-These results demonstrate that the environment can
-retrieve, process, and visualize web text.
-
-Automated tests provide additional verification
-of the project's expected behavior.
 
 ## Interpretation
 
-Web text contains both useful information and noise
-introduced by document structure and formatting.
+The results show that word frequency can provide a quick overview of the main terms used on a webpage. Filtering unnecessary words made the results more useful because fraud-related terms became more prominent.
 
-Simple text cleaning and frequency analysis
-provide an initial view of a document's vocabulary.
+One limitation is that the analysis uses only one Wikipedia article. The webpage also contains dates, references, and other text that can still affect the word counts.
 
-These techniques establish a foundation
-for later work involving text preprocessing,
-corpus exploration, and natural language processing.
+If I continued this project, I would improve the text cleaning further or compare multiple fraud-related webpages to identify common terms across different sources.
 
 ## Documentation Index
 
@@ -70,9 +59,8 @@ corpus exploration, and natural language processing.
 
 ## Project Links
 
-- [GitHub Repository](https://github.com/denisecase/nlp-01-getting-started)
-- [Example Script](https://github.com/denisecase/nlp-01-getting-started/blob/main/src/nlp/web_words.py)
-- [Example Notebook](https://github.com/denisecase/nlp-01-getting-started/blob/main/notebooks/web_words.ipynb)
+- [GitHub Repository](https://github.com/ajerineg-coder/nlp-01-getting-started-custom)
+- [Custom Script](https://github.com/ajerineg-coder/nlp-01-getting-started-custom/blob/main/src/nlp/web_words.py)
 
 ## Project Resources
 
