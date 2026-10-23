@@ -209,6 +209,7 @@ plt.title("Most Frequent Words in Fraud Article")
 plt.xlabel("Word")
 plt.ylabel("Frequency")
 plt.tight_layout()
+Path("docs").mkdir(exist_ok=True)
 plt.savefig("docs/fraud_word_frequency.png")
 plt.show()
 
