@@ -2,8 +2,8 @@
 # nlp-01-getting-started-custom
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/nlp-01-getting-started/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/nlp-01-getting-started/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/nlp-01-getting-started/)
+[![CI](https://github.com/ajerineg-coder/nlp-01-getting-started-custom/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/ajerineg-coder/nlp-01-getting-started-custom/actions/workflows/ci-python-zensical.yml)
+[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://ajerineg-coder.github.io/nlp-01-getting-started-custom/)
 
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
@@ -18,38 +18,32 @@ Author: Addie Gemmell
 
 Date: 2026 October
 
-First project in the Web Mining and Applied NLP course.
+This project analyzes text from the Wikipedia article about fraud using Python.
 
-Web Mining and Applied Natural Language Processing (NLP)
-focus on retrieving, processing, and analyzing text
-from the web and other digital sources.
+The project retrieves text from the web, cleans and processes the text,
+calculates word frequencies, and creates visualizations.
 
-The goal is to establish a working Python environment,
-explore a professional project structure,
-run a Python text analysis script,
-and verify that the project works.
+I customized the original project by changing the source to the Fraud
+Wikipedia article and filtering unnecessary words from the results.
 
 The project is configured in
 [pyproject.toml](pyproject.toml).
 
 ## Data
 
-The example retrieves HTML from a public web page
+The project retrieves HTML from the
+[Wikipedia article on Fraud](https://en.wikipedia.org/wiki/Fraud)
 using the Requests library.
 
-BeautifulSoup parses the HTML and extracts text
-for analysis.
+BeautifulSoup parses the HTML and extracts text for analysis.
 
 No local input dataset is required.
-
-The example uses the Wikipedia article on
-[Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing).
 
 ## Approach
 
 The project uses Python to retrieve and analyze web text.
 
-The example demonstrates:
+The project uses:
 
 - Retrieving HTML using HTTP requests.
 - Parsing HTML and extracting text with BeautifulSoup.
@@ -68,9 +62,9 @@ Explore these important project components:
 - [docs/](docs/) - project documentation.
 - [zensical.toml](zensical.toml) - documentation configuration.
 
-The goal is to get the project running,
-inspect the results, and understand the basic workflow
-for acquiring and analyzing text.
+The goal of my custom analysis is to identify common terms
+in the Fraud Wikipedia article and improve the results
+by filtering unnecessary words.
 
 ## Run the Project
 
@@ -91,26 +85,25 @@ interactive version of the analysis.
 
 ## Results
 
-The example retrieves web text,
-computes word frequencies,
-and displays a frequency bar chart and word cloud.
+The Fraud Wikipedia article produced 8,393 raw words
+and 5,490 cleaned words before additional filtering.
 
-Successful execution produces:
+The initial analysis showed that "fraud" was the most frequent word
+with 208 occurrences. The results also contained unnecessary words
+such as "from," "retrieved," "with," and "archived."
 
-```shell
-========================
-Pipeline executed successfully!
-========================
-```
+I added filtering to remove these words. After filtering,
+the cleaned word count decreased to 5,326.
 
-A `project.log` file is created in the project root.
+The final results included "fraud" (208), "criminal" (40),
+"scam" (36), "crime" (34), and "legal" (32).
 
-This confirms that the Python analysis executes
-and the logging system works.
+The filtering made the results more useful by allowing
+fraud-related terms to appear more prominently.
 
-### Example Visualization
+### Fraud Word Frequency Visualization
 
-![Word Cloud Example](docs/images/word_cloud_example.png)
+![Most Frequent Words in Fraud Article](docs/fraud_word_frequency.png)
 
 ## Verification
 
@@ -170,13 +163,13 @@ In the VS Code terminal,
 paste each command and hit Enter or Return after to run it.
 
 ```shell
-uv run prek install --force
-uv run prek update --freeze --cooldown-days 7
+uvx prek install --force
+uvx prek update --freeze --cooldown-days 7
 
 git add -A
-uv run prek run --all-files
+uvx prek run --all-files
 # repeat if changes were made
-uv run prek run --all-files
+uvx prek run --all-files
 ```
 
 ### Run Common Chores
